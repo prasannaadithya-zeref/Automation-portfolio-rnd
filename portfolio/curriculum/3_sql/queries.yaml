@@ -1,0 +1,18 @@
+# QUERIES.YAML
+# Store your SQL here. Do not hardcode Strings in Python!
+
+postgres:
+  get_all_users: "SELECT * FROM users WHERE active = true;"
+  get_order_count: "SELECT count(*) FROM orders WHERE date > '2024-01-01';"
+
+oracle:
+  # Oracle syntax is different (e.g., SYSDATE)
+  get_daily_report: "SELECT * FROM sales WHERE sale_date = TRUNC(SYSDATE)"
+  
+redshift:
+  # Redshift is for heavy aggregations
+  get_analytics: "SELECT region, sum(amount) FROM large_sales_table GROUP BY region"
+
+mongo:
+  # Mongo queries are JSON objects (find filters)
+  find_active_users: { "isActive": true }
