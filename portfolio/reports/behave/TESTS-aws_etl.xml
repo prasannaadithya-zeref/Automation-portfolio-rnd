@@ -1,0 +1,41 @@
+<testsuite errors="0" failures="0" hostname="Adithyaquanta" name="aws_etl.Backend ETL and API Operations" skipped="0" tests="2" time="4.727946" timestamp="2025-12-07T09:59:55.791239"><testcase classname="aws_etl.Backend ETL and API Operations" name="Validate User API Endpoint" status="passed" time="2.057801"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @api
+  Scenario: Validate User API Endpoint
+    Given the API service is running at "http://localhost:5000" ... passed in 0.001s
+    When I request user details for ID 1 ... passed in 2.056s
+    Then the response status code should be 200 ... passed in 0.000s
+    And the role should be "Automation Engineer" ... passed in 0.001s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="aws_etl.Backend ETL and API Operations" name="Verify ETL Config Upload to S3" status="passed" time="2.670146"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @aws @etl
+  Scenario: Verify ETL Config Upload to S3
+    Given I have a local config file "etl_job.conf" ... passed in 0.001s
+    When I upload the file to S3 bucket "my-datalake-bucket" ... passed in 2.669s
+    Then the file should exist in the "configs" folder on S3 ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+[AWS] No valid credentials found. Switching to DEMO MODE (Simulated Success).
+[DEMO] Simulating upload: etl_job.conf -> s3://my-datalake-bucket/configs/etl_job.conf
+Verifying existence in configs...
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+c:\users\adith\appdata\local\programs\python\python36\lib\site-packages\boto3\compat.py:88: PythonDeprecationWarning: Boto3 will no longer support Python 3.6 starting May 30, 2022. To continue receiving service updates, bug fixes, and security updates please upgrade to Python 3.7 or later. More information can be found here: https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/
+  warnings.warn(warning, PythonDeprecationWarning)
+
+]]>
+</system-err></testcase></testsuite>

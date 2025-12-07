@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.6.8 on win32)" generated="20251207 09:59:46.597" rpa="false" schemaversion="2">
+<suite id="s1" name="Integration Suite" source="D:\Workspace\Automation-portfolio-rnd\portfolio\robot-framework\tests\integration_suite.robot">
+<test id="s1-t1" name="Verify API User Data">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mock_api</arg>
+<arg>${API_BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20251207 09:59:47.247" level="INFO">Creating Session using : alias=mock_api, url=http://localhost:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20251207 09:59:47.246" endtime="20251207 09:59:47.247"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mock_api</arg>
+<arg>/users/1</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20251207 09:59:49.309" level="INFO">GET Request : url=http://localhost:5000/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20251207 09:59:49.310" level="INFO">GET Response : url=http://localhost:5000/users/1 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Content-Length': '56', 'Server': 'Werkzeug/2.0.3 Python/3.6.8', 'Date': 'Sun, 07 Dec 2025 04:29:49 GMT'} 
+ body={"id":1,"name":"Prasanna","role":"Automation Engineer"}
+ 
+ </msg>
+<msg timestamp="20251207 09:59:49.310" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20251207 09:59:47.248" endtime="20251207 09:59:49.310"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20251207 09:59:49.312" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20251207 09:59:49.310" endtime="20251207 09:59:49.312"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20251207 09:59:49.314" level="INFO">${json} = {'id': 1, 'name': 'Prasanna', 'role': 'Automation Engineer'}</msg>
+<status status="PASS" starttime="20251207 09:59:49.313" endtime="20251207 09:59:49.314"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${json['role']}</arg>
+<arg>Automation Engineer</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20251207 09:59:49.315" endtime="20251207 09:59:49.316"/>
+</kw>
+<doc>Test GET endpoint returns correct JSON schema.</doc>
+<tag>api</tag>
+<status status="PASS" starttime="20251207 09:59:47.246" endtime="20251207 09:59:49.316"/>
+</test>
+<test id="s1-t2" name="Verify AWS S3 Upload For ETL">
+<kw name="Create File">
+<arg>${TEST_FILE}</arg>
+<arg>{"etl_mode": "incremental"}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<kw name="Create File">
+<arg>${path}</arg>
+<arg>${content}</arg>
+<msg timestamp="20251207 09:59:49.364" level="FAIL">Maximum limit of started keywords exceeded.</msg>
+<status status="FAIL" starttime="20251207 09:59:49.364" endtime="20251207 09:59:49.364"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.364" endtime="20251207 09:59:49.364"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.364" endtime="20251207 09:59:49.364"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.362" endtime="20251207 09:59:49.369"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.362" endtime="20251207 09:59:49.369"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.362" endtime="20251207 09:59:49.369"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.357" endtime="20251207 09:59:49.370"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.357" endtime="20251207 09:59:49.370"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.357" endtime="20251207 09:59:49.370"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.357" endtime="20251207 09:59:49.371"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.357" endtime="20251207 09:59:49.371"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.357" endtime="20251207 09:59:49.371"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.353" endtime="20251207 09:59:49.371"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.353" endtime="20251207 09:59:49.372"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.353" endtime="20251207 09:59:49.372"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.353" endtime="20251207 09:59:49.372"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.353" endtime="20251207 09:59:49.372"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.345" endtime="20251207 09:59:49.373"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.345" endtime="20251207 09:59:49.373"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.345" endtime="20251207 09:59:49.373"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.345" endtime="20251207 09:59:49.373"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.345" endtime="20251207 09:59:49.374"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.345" endtime="20251207 09:59:49.374"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.345" endtime="20251207 09:59:49.374"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.345" endtime="20251207 09:59:49.375"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.345" endtime="20251207 09:59:49.375"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.341" endtime="20251207 09:59:49.375"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.375"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.376"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.376"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.376"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.376"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.377"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.377"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.377"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.377"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.378"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.321" endtime="20251207 09:59:49.378"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.320" endtime="20251207 09:59:49.378"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.319" endtime="20251207 09:59:49.378"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.318" endtime="20251207 09:59:49.379"/>
+</kw>
+<status status="FAIL" starttime="20251207 09:59:49.317" endtime="20251207 09:59:49.379"/>
+</kw>
+<kw name="AWS.Upload File To S3">
+<var>${status}=</var>
+<arg>${TEST_FILE}</arg>
+<arg>${BUCKET_NAME}</arg>
+<arg>configs/${TEST_FILE}</arg>
+<status status="NOT RUN" starttime="20251207 09:59:49.382" endtime="20251207 09:59:49.382"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${status}</arg>
+<arg>Upload failed or skipped (check credentials)</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" starttime="20251207 09:59:49.382" endtime="20251207 09:59:49.382"/>
+</kw>
+<kw name="AWS.Check File Exists In S3">
+<var>${exists}=</var>
+<arg>${BUCKET_NAME}</arg>
+<arg>configs/${TEST_FILE}</arg>
+<status status="NOT RUN" starttime="20251207 09:59:49.387" endtime="20251207 09:59:49.388"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>File check status: ${exists}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20251207 09:59:49.388" endtime="20251207 09:59:49.388"/>
+</kw>
+<doc>Simulate an ETL trigger: Upload config to S3.</doc>
+<tag>aws</tag>
+<tag>etl</tag>
+<status status="FAIL" starttime="20251207 09:59:49.317" endtime="20251207 09:59:49.388">Maximum limit of started keywords exceeded.</status>
+</test>
+<doc>Integration Suite: API Testing and AWS/ETL pipelines.
+Uses RequestsLibrary for API and Custom Python Library for AWS.</doc>
+<status status="FAIL" starttime="20251207 09:59:46.597" endtime="20251207 09:59:49.390"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">api</stat>
+<stat pass="0" fail="1" skip="0">aws</stat>
+<stat pass="0" fail="1" skip="0">etl</stat>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Integration Suite">Integration Suite</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20251207 09:59:47.239" level="WARN">Imported library 'D:\Workspace\Automation-portfolio-rnd\portfolio\python-frameworks\utils\aws_handler.py' contains no keywords.</msg>
+</errors>
+</robot>

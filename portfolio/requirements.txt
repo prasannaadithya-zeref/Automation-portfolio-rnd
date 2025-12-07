@@ -1,0 +1,29 @@
+# --- Core Python Frameworks ---
+pandas>=1.1.0,<2.0.0
+numpy>=1.19.0,<1.20.0
+# polars>=0.19.0   # Polars requires Python 3.8+. Commented out for 3.6 compatibility.
+# pyspark>=3.5.0   # PySpark requires Java. 
+requests>=2.25.0
+boto3>=1.17.0
+openpyxl>=3.0.0
+
+# --- Database Drivers ---
+sqlalchemy>=1.4.0,<2.0.0
+psycopg2-binary>=2.8.0
+pymongo>=3.11.0
+
+# --- API Mock Service ---
+flask>=2.0.0
+
+# --- Robot Framework & Libraries ---
+robotframework>=4.0.0,<5.0.0
+robotframework-seleniumlibrary>=5.0.0
+robotframework-requests>=0.9.0
+
+# --- Behave BDD & Reporting ---
+behave>=1.2.6
+# behavex>=2.0.0         # Might require newer python
+selenium>=3.141.0
+
+# --- Testing Utilities ---
+pytest>=6.0.0
